@@ -63,7 +63,6 @@ nav ul {
 
 .main-content {
     min-height: 100vh; /* ensures it takes up full viewport height */
-    
     margin-top: 150px;
 }
 
