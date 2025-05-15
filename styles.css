@@ -1,30 +1,41 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-body{
+
+body {
     background-color: black;
     color: white;
     font-family: Arial, sans-serif;
 }
-.container{
+
+.container {
     text-align: center;
     padding: 50px;
+    position: relative;
+    background-color: #111;
+    overflow: hidden;
+    height: auto;
+    padding: 84px 19px;
 }
-.header{    
-    position:absolute;
+
+.header {
+    position: absolute;
     display: flex;
     flex-direction: column;
-    margin-left: 700px;
+    align-items: flex-end;
+    right: 5%;
     top: 20px;
-    width: 100%;
+    width: auto;
 }
+
 button:hover {
     background-color: #ff4d4d;
     color: #fff;
     transition: 0.3s ease;
 }
+
 nav ul li a {
     text-decoration: none;
     color: #ff4d4d;
@@ -43,7 +54,7 @@ nav ul li a:hover {
     transform: scale(1.05);
 }
 
-nav ul{
+nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
@@ -51,20 +62,13 @@ nav ul{
 }
 
 .main-content {
-    margin-top: 150px; 
+    margin-top: 150px;
     margin-bottom: 220px;
-}
-.container {
     position: relative;
-    text-align: center;
-    background-color: #111;
-    overflow: hidden;
-    height: auto;
-    padding: 84px 19px; 
-  }
-  
+}
+
 .name-1 {
-    font-size: 120px;
+    font-size: clamp(40px, 10vw, 120px);
     font-family: 'Anton', sans-serif;
     text-transform: uppercase;
     letter-spacing: 10px;
@@ -77,16 +81,19 @@ nav ul{
     opacity: 0.12;
     white-space: nowrap;
 }
-.main-image{
+
+.main-image {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    height: 100%;
+    max-width: 100%;
+    height: auto;
     z-index: 1;
 }
-.name-2{
-    font-size: 120px;
+
+.name-2 {
+    font-size: clamp(40px, 10vw, 120px);
     font-family: 'Anton', sans-serif;
     text-transform: uppercase;
     letter-spacing: 10px;
@@ -96,21 +103,44 @@ nav ul{
     transform: translate(-50%, -50%);
     z-index: 2;
     -webkit-text-stroke: 0.2px #000000;
-    color: transparent; 
-    opacity: 35%;
+    color: transparent;
+    opacity: 0.35;
     white-space: nowrap;
 }
+
 .website {
     display: flex;
     flex-direction: row;
-    margin-left: 80%;
-    margin-top: 346px;
+    justify-content: flex-end;
+    margin-right: 5%;
+    margin-top: 20px;
     color: white;
     text-decoration: none;
     opacity: 0.2;
     transition: opacity 0.3s;
 }
+
 .website:hover {
     opacity: 1;
-    cursor:grab
+    cursor: grab;
+}
+
+/* Responsive Fixes */
+@media (max-width: 1024px) {
+    .header {
+        align-items: center;
+        right: auto;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .website {
+        justify-content: center;
+        margin: 30px auto;
+    }
 }
